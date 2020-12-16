@@ -24,10 +24,13 @@ type options struct {
 	parallelism int
 }
 
+// Options sets configurations.
 type Options func(*options)
 
+// DoFunc is the function applied to a single piece of work.
 type DoFunc func(piece int)
 
+// WithParallelism sets the number of workers doing work at the same time.
 func WithParallelism(parallelism int) func(*options) {
 	return func(o *options) {
 		if parallelism < 1 {
@@ -51,6 +54,7 @@ func (o *options) chunkSizeFor(n int) int {
 	return s
 }
 
+// Until runs same function on a number of pieces and blocks until all jobs are done.
 func Until(ctx context.Context, pieces int, do DoFunc, opts ...Options) {
 	o := options{parallelism: 16}
 	for _, opt := range opts {

@@ -1,0 +1,25 @@
+[general]
+# message body is optional 
+ignore=body-is-missing
+
+# by default merge commits message will be ignored
+# ignore-merge-commits=false
+
+# by default fixup commits message will be ignored
+# ignore-fixup-commits=false
+
+[title-max-length]
+# maximum length of title is 120 chars
+line-length=120
+
+[title-match-regex]
+# title style：<type>[(scope)]: <description>
+regex=^(?:feat|fix|docs|style|refactor|test|chore)(?:\(\S+\))?: [a-z].*
+
+[body-max-line-length]
+# maximum length of body is 120 chars
+line-length=120
+ 
+[body-min-length]
+# minimum length of body is 5 chars
+min-length=5
