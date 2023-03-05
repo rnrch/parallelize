@@ -1,6 +1,7 @@
-test: 
+test:
 	go test -v ./...
+.PHONY: test
 
 addlicense:
-	# install with `go get github.com/google/addlicense`
+	# install with `go install github.com/google/addlicense`
 	addlicense -c 'rnrch' -l apache -v .
